@@ -29,7 +29,7 @@ class Resnet18(tf.keras.Model):
         pool = tf.keras.layers.MaxPooling2D()
         self.init_conv_bn = ConvBN(c)
         self.b1 = ResBlk(c*2, pool, res = True)
-        self.b2 = ResBlk(c*4, pool, res = True)
+        self.b2 = ResBlk(c*2, pool, res = True)
         self.b3 = ResBlk(c*4, pool, res = True)
         self.b4 = ResBlk(c*8, pool, res = True)
         self.avg_pool = tf.keras.layers.GlobalAveragePooling2D()
